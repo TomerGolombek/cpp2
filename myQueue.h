@@ -3,10 +3,11 @@ Author: Tomer Golombek, ID: 316309699
 Author: Yoav Nahum, ID: 318674249
 */
 
+
 #ifndef EX4_MYQUEUE_H
 #define EX4_MYQUEUE_H
+#include "Menu.h"
 
-#include <vector>
 
 using namespace std;
 class myQueue{
@@ -16,11 +17,16 @@ int maxQ;
 vector<int> elements;
 
 public:
-    myQueue (int maxQ);
-    ~myQueue();
-    bool enQueue(int val);
+    myQueue (int max);
+    //~myQueue(int maxQ);
+    void InitVec();
+    int ShowQ();
+    int PrintVector();
+    bool enQueue (int const val);
     bool deQueue();
     bool isEmpty();
-    vector<int>* peek();
+    int* peek();
+
+
 };
 #endif //EX4_MYQUEUE_H

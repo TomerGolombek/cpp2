@@ -5,8 +5,11 @@ Author: Yoav Nahum, ID: 318674249
 
 #include <iostream>
 #include "Menu.cpp"
+#include "main.h"
+
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
     //simply creating a menu instance, then calling mainMenu(). the rest is inside mainMenu().
 	Menu a;
 	a.mainMenu();

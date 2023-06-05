@@ -2,9 +2,9 @@
 Author: Tomer Golombek, ID: 316309699
 Author: Yoav Nahum, ID: 318674249
 */
-#include <iostream>
-#include "Menu.h"
 
+#include "Menu.h"
+using namespace std;
 
 
 
@@ -19,8 +19,8 @@ int Menu::mainMenu() {
             break; // Valid choice, exit the loop
         }
 
-        std::cout << "Invalid selection." << std::endl;
-        std::cin.clear(); // Clear any error flags
+        cout << "Invalid selection." << endl;
+        cin.clear(); // Clear any error flags
         mainMenu();
 
     }
@@ -30,7 +30,6 @@ int Menu::mainMenu() {
     switch (choice) {
         case 1:
             setMenu();
-
             break;
         case 2:
             queueMenu();
@@ -105,10 +104,10 @@ int   Menu::setMenu() {
 
 
 int  Menu::queueMenu() {
-    int choice;
-    int size;
-    std::cout<<"Enter the size of the queue:";
-    std::cin >> size;
+    int choice,sizeQ;
+    cout<<"Enter the size of the queue:"<<endl;
+    cin>>sizeQ;
+    myQueue queue(sizeQ);
     while (true) {
         std::cout << "*** Welcome to Queue Menu ***\n"
 "To select an item, enter\n"
@@ -117,14 +116,14 @@ int  Menu::queueMenu() {
 "3 Remove element\n"
 "4 Check the first element\n"
 "5 to exit\n";
-        std::cin >> choice;
+        cin >> choice;
 
         if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 ) {
             break; // Valid choice, exit the loop
         }
 
-        std::cout << "Invalid selection." << std::endl;
-        std::cin.clear(); // Clear any error flags
+        cout << "Invalid selection." << endl;
+        cin.clear(); // Clear any error flags
         queueMenu();
 
     }
@@ -132,21 +131,30 @@ int  Menu::queueMenu() {
 
     switch (choice) {
         case 1://Show Queue
-
+            queue.PrintVector();
 
             break;
 
         case 2://Insert new element
-
+            int push_element;
+            cout<< "insert new element: ";
+            cin>>push_element;
+            queue.enQueue(push_element);
 
             break;
 
         case 3: //Remove element
-
+            cout<<"The new queue:"<<endl;
+            queue.deQueue();
+            if (queue.isEmpty())
+                break;
+            queue.PrintVector();
             break;
 
         case 4:// Check the first element
-
+            if (queue.isEmpty())
+                break;
+            queue.peek();
             break;
 
         case 5://exit need to clear stuf?
