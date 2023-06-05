@@ -4,8 +4,11 @@ Author: Yoav Nahum, ID: 318674249
 */
 
 #include <iostream>
-
+#include "Menu.cpp"
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    return 0;
+    //simply creating a menu instance, then calling mainMenu(). the rest is inside mainMenu().
+	Menu a;
+	a.mainMenu();
+	return 0;
 }
