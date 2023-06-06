@@ -14,14 +14,14 @@ myQueue::myQueue(int max){
 
 int myQueue::PrintVector() {
     if (elements.empty()) {
-        cout << "The queue is empty" << endl;
+        cout << "The queue is empty\n" << endl;
         return false;
     }
     cout<<elements[0];
     for (int i=1; i < elements.size();i++){
         cout<< " <- " <<elements[i] ;
     }
-    cout<<endl;
+    cout<<"\n"<<endl;
     return true;
 }
 

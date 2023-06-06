@@ -23,7 +23,7 @@ public:
     int getCurrentSize();
     Set& operator= (const Set& obj);
     Set& operator+= (int i);
-    friend Set& operator+ (const Set& , const Set&);
+    friend Set operator+ (const Set& , const Set&);
     bool operator> (const Set& obj);
     int operator[] (int i);
     friend ostream& operator<<( ostream &, const Set & );

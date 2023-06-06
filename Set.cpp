@@ -41,14 +41,31 @@ Set& Set::operator+=(int val) {
     return *this;
 }
 
-Set& operator+ (const Set &s1,const Set &s2) {
+Set operator+ (const Set &s1,const Set &s2) {
     Set s3(3);
+    int index = 0;
     s3.currentSize = s1.currentSize+s2.currentSize;
     for (int i=0; i <s1.currentSize ; i++){
         s3.arr[i] = s1.arr[i];
     }
     for (int i=0; i<s2.currentSize ; i++){
-        s3.arr[i + s1.currentSize] = s2.arr[i];
+        if(!s1.currentSize){
+            for (int t=0; t < s2.currentSize ; t++){
+                s3.arr[t] = s2.arr[t];
+            }
+            break;
+        }
+        for (int j=0; j<s1.currentSize; j++){
+            if(s2.arr[i]==s1.arr[j]) {
+                s3.currentSize--;
+                break;
+            }
+            if (j==s1.currentSize-1){
+                s3.arr[index + s1.currentSize] = s2.arr[i];
+                index++;
+            }
+
+        }
     }
     return s3;
 }
@@ -65,9 +82,16 @@ int Set:: operator[] (int i){
 }
 
 ostream& operator<<( ostream &output, const Set &s ) {
-    if(!s.currentSize){
-        output<<"Set "<< s.set_number <<" is empty"<<endl;
-        return output;
+    if(s.set_number==3){
+        if(!s.currentSize){
+            output<<"The union is empty"<<endl;
+            return output;
+        }
+    }else{
+        if(!s.currentSize){
+            output<<"Set "<< s.set_number <<" is empty"<<endl;
+            return output;
+        }
     }
     output<<"{"<<s.arr[0];
     for (int i=1;i<s.currentSize;i++){

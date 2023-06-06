@@ -96,8 +96,9 @@ void Menu::setMenu() {
 
 void  Menu::queueMenu() {
     int choice,sizeQ;
-    cout<<"Enter the size of the queue:"<<endl;
+    cout<<"Enter the size of the queue: ";
     cin>>sizeQ;
+    cout<<endl;
     myQueue queue(sizeQ);
     while (true){
         while (true) {
@@ -127,13 +128,15 @@ void  Menu::queueMenu() {
                 cout<< "insert new element: ";
                 cin>>push_element;
                 queue.enQueue(push_element);
+                cout<<"The new queue:"<<endl;
+                queue.PrintVector();
                 break;
 
             case 3: //Remove element
-                cout<<"The new queue:"<<endl;
                 queue.deQueue();
                 if (queue.isEmpty())
                     break;
+                cout<<"The new queue:"<<endl;
                 queue.PrintVector();
                 break;
 
