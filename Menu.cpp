@@ -127,22 +127,26 @@ void  Menu::queueMenu() {
                 int push_element;
                 cout<< "insert new element: ";
                 cin>>push_element;
-                queue.enQueue(push_element);
+                if(!queue.enQueue(push_element))
+                    break;
                 cout<<"The new queue:"<<endl;
                 queue.PrintVector();
                 break;
 
             case 3: //Remove element
-                queue.deQueue();
-                if (queue.isEmpty())
+                if (!queue.deQueue()){
+                  cout<<"Queue is empty\n"<<endl;
                     break;
+                }
                 cout<<"The new queue:"<<endl;
                 queue.PrintVector();
                 break;
 
             case 4:// Check the first element
-                if (queue.isEmpty())
+                if (queue.isEmpty()) {
+                    cout << "Queue is empty\n" << endl;
                     break;
+                }
                 queue.peek();
                 break;
 

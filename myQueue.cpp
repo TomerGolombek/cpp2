@@ -11,6 +11,8 @@ myQueue::myQueue(int max){
     maxQ = max;
     elements.clear();
 }
+myQueue::~myQueue(){
+}
 
 int myQueue::PrintVector() {
     if (elements.empty()) {
@@ -38,12 +40,13 @@ bool myQueue:: deQueue(){
     if (isEmpty())
         return false;
     elements.erase(elements.begin());
+    if (isEmpty())
+        return false;
     return true;
 }
 
 bool myQueue:: isEmpty(){
     if (elements.empty()){
-        cout << "Queue is empty" << endl;
         return true;
     }
     return false;//true if the container is empty, false otherwise

@@ -18,7 +18,7 @@ vector<int> elements;
 
 public:
     myQueue (int max);
-    //~myQueue(int maxQ);
+    ~myQueue();
     int PrintVector();
     bool enQueue (int val);
     bool deQueue();
