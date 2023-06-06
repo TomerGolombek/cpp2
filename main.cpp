@@ -3,8 +3,6 @@ Author: Tomer Golombek, ID: 316309699
 Author: Yoav Nahum, ID: 318674249
 */
 
-#include <iostream>
-#include "Menu.cpp"
 #include "main.h"
 
 

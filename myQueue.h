@@ -19,13 +19,11 @@ vector<int> elements;
 public:
     myQueue (int max);
     //~myQueue(int maxQ);
-    void InitVec();
-    int ShowQ();
     int PrintVector();
-    bool enQueue (int const val);
+    bool enQueue (int val);
     bool deQueue();
     bool isEmpty();
-    int* peek();
+    vector<int>* peek();
 
 
 };
