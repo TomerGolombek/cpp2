@@ -6,7 +6,8 @@ Author: Yoav Nahum, ID: 318674249
 
 #ifndef EX4_MYQUEUE_H
 #define EX4_MYQUEUE_H
-#include "Menu.h"
+//#include "Menu.h"
+#include "vector"
 
 
 using namespace std;
@@ -23,7 +24,7 @@ public:
     bool enQueue (int val);
     bool deQueue();
     bool isEmpty();
-    vector<int>* peek();
+    int* peek() const;
 
 
 };

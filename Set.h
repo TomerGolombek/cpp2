@@ -6,7 +6,8 @@ Author: Yoav Nahum, ID: 318674249
 
 #ifndef EX4_SET_H
 #define EX4_SET_H
-#include "Menu.h"
+//#include "Menu.h"
+#include <iostream>
 using namespace std;
 
 class Set{
@@ -25,7 +26,7 @@ public:
     Set& operator+= (int i);
     friend Set operator+ (const Set& , const Set&);
     bool operator> (const Set& obj);
-    int operator[] (int i);
+    int operator[] (int i) const;
     friend ostream& operator<<( ostream &, const Set & );
 };
 #endif //EX4_SET_H

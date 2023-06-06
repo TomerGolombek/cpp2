@@ -4,6 +4,7 @@ Author: Yoav Nahum, ID: 318674249
 */
 
 #include "Menu.h"
+
 using namespace std;
 void Menu::mainMenu() {
     int choice;

@@ -13,7 +13,7 @@ Set::Set(const Set& obj): maxSize(obj.maxSize) {
         arr[i] = obj.arr[i];
     }
 }
-Set::~Set() {delete arr;}
+Set::~Set() {delete this->arr;}
 
 int Set::getCurrentSize() {
     return currentSize;
@@ -31,7 +31,7 @@ Set& Set:: operator= (const Set& obj){
     return *this;
 }
 
-Set& Set::operator+=(int val) {
+Set&  Set::operator+=(int val) {
     for (int i = 0; i<currentSize; i++){
         if (val==arr[i])
             return *this;
@@ -77,7 +77,7 @@ bool Set:: operator> (const Set& obj){
         return true;
     }
 }
-int Set:: operator[] (int i){
+int Set:: operator[] (int i ) const{
     return arr[i];
 }
 

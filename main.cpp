@@ -5,11 +5,12 @@ Author: Yoav Nahum, ID: 318674249
 
 #include "main.h"
 
-
 int main() {
 
     //simply creating a menu instance, then calling mainMenu(). the rest is inside mainMenu().
+
 	Menu a;
 	a.mainMenu();
+
 	return 0;
 }

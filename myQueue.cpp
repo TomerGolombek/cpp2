@@ -3,7 +3,7 @@ Author: Tomer Golombek, ID: 316309699
 Author: Yoav Nahum, ID: 318674249
 */
 #include "myQueue.h"
-
+#include <iostream>
 // Assign vector
 
 
@@ -12,6 +12,7 @@ myQueue::myQueue(int max){
     elements.clear();
 }
 myQueue::~myQueue(){
+    elements.clear();
 }
 
 int myQueue::PrintVector() {
@@ -51,10 +52,11 @@ bool myQueue:: isEmpty(){
     }
     return false;//true if the container is empty, false otherwise
 }
-vector<int>* myQueue:: peek(){
+int* myQueue:: peek() const{
         if (!elements.empty()) {
             cout << elements[0] << endl;
-            return  &elements;  // Return pointer to the first element
+            int* ptr = const_cast<int *>(elements.data());
+            return  ptr;  // Return pointer to the first element
         } else {
             cout << "Queue is empty" << endl;
             return nullptr;  // Return nullptr for an empty vector
